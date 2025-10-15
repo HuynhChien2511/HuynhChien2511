@@ -1,0 +1,95 @@
+
+        /* Global Styles */
+        body {
+            background-color: #10172A; /* primary-dark */
+            color: #E5E7EB; /* text-light */
+            scroll-behavior: smooth;
+        }
+
+        /* Light mode variables - applied when .light is on the html element */
+        :root.light {
+            --bg: #F9FAFB; /* very light gray */
+            --card-bg: rgba(0,0,0,0.03);
+            --text: #0f172a; /* near-black */
+            --muted: #6B7280;
+            --accent-bg: #3B82F6;
+        }
+
+        /* When .light is present on the root, override body and card colors */
+        html.light body {
+            background-color: var(--bg);
+            color: var(--text);
+        }
+
+        html.light .card {
+            background-color: var(--card-bg);
+            border-color: rgba(15,23,42,0.06);
+        }
+
+        html.light .bg-accent {
+            background-color: var(--accent-bg);
+        }
+
+        html.light .text-text-muted {
+            color: var(--muted);
+        }
+
+        /* Ensure elements that use the `text-text-light` utility become readable in light mode */
+        html.light .text-text-light {
+            color: var(--text) !important;
+        }
+
+        /* Make navigation links and icons white when the nav stays dark in light mode */
+        html.light nav {
+            background-color: #10172A; /* keep nav dark */
+        }
+
+        html.light nav a,
+        html.light nav button,
+        html.light nav svg {
+            color: #ffffff !important;
+            fill: #ffffff !important;
+            stroke: #ffffff !important;
+        }
+
+        /* Ensure mobile menu links are white in light mode (higher specificity) */
+        html.light #mobile-menu a.text-text-light,
+        html.light #mobile-menu a {
+            color: #ffffff !important;
+        }
+
+        /* Specific override for desktop nav items that use utility classes */
+        html.light .max-w-7xl a.text-text-light,
+        html.light .max-w-7xl a:not(.text-accent) {
+            color: #ffffff !important;
+        }
+
+        /* Custom smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Utility for all sections */
+        .section-padding {
+            padding: 4rem 0;
+        }
+        
+        /* Custom card style */
+        .card {
+            background-color: rgba(255, 255, 255, 0.05); /* slightly visible dark background */
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Style for the Skills icons (using simple inline SVGs as placeholders) */
+        .skill-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 0.5rem;
+            background-color: rgba(59, 130, 246, 0.1); /* light blue accent background */
+            color: #3B82F6;
+        }
+    

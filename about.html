@@ -39,7 +39,8 @@
                 <div class="hidden md:flex space-x-8">
                     <a href="index.html" class="text-text-light hover:text-accent transition duration-300">Home</a>
                     <a href="about.html" class="text-text-light hover:text-accent transition duration-300">About</a>
-                    <a href="about.html#skills" class="text-text-light hover:text-accent transition duration-300">Skills</a>
+                    <a href="skills.html#skills" class="text-text-light hover:text-accent transition duration-300">Skills</a>
+                    <a href="gallery.html" class="text-text-light hover:text-accent transition duration-300">Gallery</a>
                     <a href="contact.html" class="px-3 py-1 border border-accent rounded-lg text-accent hover:bg-accent hover:text-primary-dark transition duration-300">contact</a>
                 </div>
                 <button id="mobile-menu-button" class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-accent" aria-expanded="false">
@@ -58,7 +59,8 @@
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-text-light hover:bg-accent/20">Home</a>
                 <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-text-light hover:bg-accent/20">About</a>
-                <a href="about.html#skills" class="block px-3 py-2 rounded-md text-base font-medium text-text-light hover:bg-accent/20">Skills</a>
+                <a href="skills.html#skills" class="block px-3 py-2 rounded-md text-base font-medium text-text-light hover:bg-accent/20">Skills</a>
+                <a href="gallery.html" class="block px-3 py-2 rounded-md text-base font-medium text-text-light hover:bg-accent/20">Gallery</a>
                 <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-accent hover:bg-accent hover:text-primary-dark">contact</a>
             </div>
         </div>
@@ -75,74 +77,28 @@
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aperiam, veritatis obcaecati quibusdam excepturi qui quas ex blanditiis iure perspiciatis modi laborum harum minus nihil placeat consectetur voluptate eligendi repudiandae.
                 </p>
                 <div class="mt-8 text-center">
-                    <a href="#skills" class="text-accent hover:text-text-light font-semibold border-b border-accent hover:border-text-light transition duration-300">
+                    <a href="skills.html#skills" class="text-accent hover:text-text-light font-semibold border-b border-accent hover:border-text-light transition duration-300">
                         Check out my core skills below &rarr;
                     </a>
+                </div>
+                <!-- Map iframe -->
+                <div class="mt-8">
+                    <h3 class="text-xl font-semibold mb-3">Area map</h3>
+                    <div class="w-full rounded-lg overflow-hidden shadow-lg">
+                        <!-- Responsive iframe using Tailwind aspect ratio (if available) or fixed height fallback -->
+                        <div class="relative" style="padding-top:56.25%;">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15672.607803727462!2d106.79193242444191!3d10.876045137586987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d8a415a9d221%3A0x550c2b41569376f9!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBRdeG7kWMgVOG6vyAtIMSQ4bqhaSBo4buNYyBRdeG7kWMgZ2lhIFRQLkhDTQ!5e0!3m2!1svi!2s!4v1760934256528!5m2!1svi!2s"
+                                width="600"
+                                height="450"
+                                style="border:0; position:absolute; inset:0; width:100%; height:100%;"
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
-
-    <!-- Skills section moved from index.html -->
-    <section id="skills" class="section-padding">
-        <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Core Expertise</h2>
-            
-            <!-- Skills Grid -->
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-
-                <!-- Skill Card 1: JavaScript -->
-                <div class="card p-6 rounded-xl text-center hover:shadow-accent/50 hover:shadow-xl transition duration-300">
-                    <div class="skill-icon mx-auto mb-4">JS</div>
-                    <h3 class="text-xl font-semibold mb-1">JavaScript</h3>
-                    <p class="text-sm text-text-muted">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-
-                <!-- Skill Card 2: React -->
-                <div class="card p-6 rounded-xl text-center hover:shadow-accent/50 hover:shadow-xl transition duration-300">
-                    <div class="skill-icon mx-auto mb-4">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.18 10.95l-3.27-3.27c-.2-.2-.51-.2-.71 0l-3.27 3.27c-.2.2-.2.51 0 .71l.71.71c.2.2.51.2.71 0l2.56-2.56v5.89c0 .28.22.5.5.5s.5-.22.5-.5V12.06l2.56 2.56c.2.2.51.2.71 0l.71-.71c.2-.2.2-.51 0-.71z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-1">Backend development</h3>
-                    <p class="text-sm text-text-muted">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-
-                <!-- Skill Card 3: Backend (Node/Python) -->
-                <div class="card p-6 rounded-xl text-center hover:shadow-accent/50 hover:shadow-xl transition duration-300">
-                    <div class="skill-icon mx-auto mb-4">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org="><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-12H8v6h2v-6zm4 0h-2v6h2v-6z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-1">Debugging code</h3>
-                    <p class="text-sm text-text-muted">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                </div>
-
-                <!-- Skill Card 4: Databases -->
-                <div class="card p-6 rounded-xl text-center hover:shadow-accent/50 hover:shadow-xl transition duration-300">
-                    <div class="skill-icon mx-auto mb-4">DB</div>
-                    <h3 class="text-xl font-semibold mb-1">Databases (SQL)</h3>
-                    <p class="text-sm text-text-muted">Efficient data modeling and management.</p>
-                </div>
-                
-                <!-- Skill Card 5: Cloud/DevOps -->
-                <div class="card p-6 rounded-xl text-center hover:shadow-accent/50 hover:shadow-xl transition duration-300">
-                    <div class="skill-icon mx-auto mb-4">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4c-2.82 0-5.12 1.4-6.53 3.49C4.6 7.6 3 9.17 3 11c0 2.21 1.79 4 4 4h12c1.66 0 3-1.34 3-3 0-1.54-1.12-2.84-2.65-2.96zM13 15v-3h3l-4-5-4 5h3v3h2z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-1">Code optimizing</h3>
-                    <p class="text-sm text-text-muted">Lorem ipsum dolor sit amet.</p>
-                </div>
-                
-                <!-- Skill Card 6: UX/UI Design -->
-                <div class="card p-6 rounded-xl text-center hover:shadow-accent/50 hover:shadow-xl transition duration-300">
-                    <div class="skill-icon mx-auto mb-4">Lorem.</div>
-                    <h3 class="text-xl font-semibold mb-1">Lorem, ipsum dolor.</h3>
-                    <p class="text-sm text-text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <footer class="py-6 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-4 text-center text-sm text-text-muted">

@@ -72,4 +72,52 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('theme', newTheme);
         });
     }
+
+    // Ticket form handler - constructs a mailto: link and opens the user's email client
+    // Exposed on window so the inline onsubmit in Contact.html can call it
+    window.handleTicketSubmit = function (event) {
+        event.preventDefault();
+        const form = document.getElementById('ticket-form');
+        const name = document.getElementById('ticket-name')?.value.trim();
+        const phone = document.getElementById('ticket-phone')?.value.trim();
+        const email = document.getElementById('ticket-email')?.value.trim();
+        const description = document.getElementById('ticket-description')?.value.trim();
+        const feedback = document.getElementById('ticket-feedback');
+
+        // Basic validations
+        if (!name || !phone || !email || !description) {
+            if (feedback) feedback.textContent = 'Please provide your name, phone, email, and a short description.';
+            return false;
+        }
+
+        // Simple email validation
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            if (feedback) feedback.textContent = 'Please provide a valid email address.';
+            return false;
+        }
+
+        const to = 'chienproccc1@gmail.com';
+        const subject = encodeURIComponent('New ticket from website');
+        const bodyLines = [
+            `Name: ${name}`,
+            `Phone: ${phone}`,
+            `Email: ${email}`,
+            '',
+            'Description:',
+            `${description}`,
+            '',
+            `Submitted from: ${window.location.href}`
+        ];
+        const body = encodeURIComponent(bodyLines.join('\n'));
+
+        // mailto must not contain newlines raw; use encoded body
+        const mailto = `mailto:${to}?subject=${subject}&body=${body}`;
+
+        // Open mailto - using location.href may be blocked by some browsers, but works widely
+        window.location.href = mailto;
+
+        if (feedback) feedback.textContent = 'Opening your email client...';
+        return false; // prevent default form submission
+    };
 });

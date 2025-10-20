@@ -39,7 +39,8 @@
                 <div class="hidden md:flex space-x-8">
                     <a href="index.html" class="text-text-light hover:text-accent transition duration-300">Home</a>
                     <a href="about.html" class="text-text-light hover:text-accent transition duration-300">About</a>
-                    <a href="about.html#skills" class="text-text-light hover:text-accent transition duration-300">Skills</a>
+                    <a href="skills.html#skills" class="text-text-light hover:text-accent transition duration-300">Skills</a>
+                    <a href="gallery.html" class="text-text-light hover:text-accent transition duration-300">Gallery</a>
                     <a href="contact.html" class="px-3 py-1 border border-accent rounded-lg text-accent hover:bg-accent hover:text-primary-dark transition duration-300">contact</a>
                 </div>
                 <button id="mobile-menu-button" class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-accent" aria-expanded="false">
@@ -58,14 +59,15 @@
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-text-light hover:bg-accent/20">Home</a>
                 <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-text-light hover:bg-accent/20">About</a>
-                <a href="about.html#skills" class="block px-3 py-2 rounded-md text-base font-medium text-text-light hover:bg-accent/20">Skills</a>
+                <a href="skills.html#skills" class="block px-3 py-2 rounded-md text-base font-medium text-text-light hover:bg-accent/20">Skills</a>
+                <a href="gallery.html" class="block px-3 py-2 rounded-md text-base font-medium text-text-light hover:bg-accent/20">Gallery</a>
                 <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-accent hover:bg-accent hover:text-primary-dark">contact</a>
             </div>
         </div>
     </nav>
 
     <main class="section-padding bg-accent">
-        <div class="max-w-xl mx-auto text-center px-4 py-12 card bg-secondary-light/95">
+        <div class="max-w-xl mx-auto text-center px-4 py-20 md:py-24 card bg-secondary-light/95">
             <h2 class="text-4xl font-bold text-primary-dark mb-4">Ready to build something great?</h2>
             <p class="text-lg text-primary-dark/80 mb-8">
                 I'm currently open for new projects, collaborations, and full-time opportunities.
@@ -77,6 +79,42 @@
             <p class="text-sm text-primary-dark/60 mt-4">chienproccc1@gmail.com</p>
         </div>
     </main>
+
+    <!-- Ticket form block -->
+    <section id="ticket" class="section-padding mt-8 md:mt-12">
+        <div class="max-w-xl mx-auto px-4 py-10 card bg-secondary-light/95">
+            <h3 class="text-2xl font-bold text-primary-dark mb-4">Create a Ticket</h3>
+            <p class="text-primary-dark/80 mb-6">Leave your name and phone number and I'll get back to you. Submitting will open your email client with the details pre-filled.</p>
+
+            <form id="ticket-form" class="space-y-4" onsubmit="return handleTicketSubmit(event)">
+                <div>
+                    <label for="ticket-name" class="block text-sm font-medium text-primary-dark mb-1">Full name</label>
+                    <input id="ticket-name" name="name" type="text" required class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-accent" placeholder="Your full name">
+                </div>
+
+                <div>
+                    <label for="ticket-phone" class="block text-sm font-medium text-primary-dark mb-1">Phone number</label>
+                    <input id="ticket-phone" name="phone" type="tel" pattern="[0-9+\-() ]{7,}" required class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-accent" placeholder="e.g. +1 555 555 5555">
+                </div>
+
+                <div>
+                    <label for="ticket-email" class="block text-sm font-medium text-primary-dark mb-1">Email address</label>
+                    <input id="ticket-email" name="email" type="email" required class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-accent" placeholder="e.g. something@gmail.com">
+                </div>
+
+                <div>
+                    <label for="Description" class="block text-sm font-medium text-primary-dark mb-1">Description</label>
+                    <textarea id="ticket-description" name="description" rows="4" required class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-accent" placeholder="Describe your issue or request here..."></textarea>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="inline-block px-6 py-2 bg-accent text-white font-semibold rounded-md hover:bg-accent-hover transition">Submit Ticket</button>
+                </div>
+            </form>
+
+            <p id="ticket-feedback" class="text-sm text-primary-dark/70 mt-3" aria-live="polite"></p>
+        </div>
+    </section>
 
     <footer class="py-6 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-4 text-center text-sm text-text-muted">

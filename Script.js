@@ -82,11 +82,24 @@ document.addEventListener('DOMContentLoaded', () => {
         const phone = document.getElementById('ticket-phone')?.value.trim();
         const email = document.getElementById('ticket-email')?.value.trim();
         const description = document.getElementById('ticket-description')?.value.trim();
+        // New fields
+        const genderEls = document.getElementsByName('gender');
+        const deadline = document.getElementById('ticket-deadline')?.value;
+        let gender = '';
+        for (const g of genderEls) {
+            if (g.checked) { gender = g.value; break; }
+        }
         const feedback = document.getElementById('ticket-feedback');
 
         // Basic validations
         if (!name || !phone || !email || !description) {
             if (feedback) feedback.textContent = 'Please provide your name, phone, email, and a short description.';
+            return false;
+        }
+
+        // gender is required by form (radio required on first), but double-check
+        if (!gender) {
+            if (feedback) feedback.textContent = 'Please select your gender.';
             return false;
         }
 
@@ -103,6 +116,8 @@ document.addEventListener('DOMContentLoaded', () => {
             `Name: ${name}`,
             `Phone: ${phone}`,
             `Email: ${email}`,
+            `Gender: ${gender}`,
+            `Preferred deadline: ${deadline || 'N/A'}`,
             '',
             'Description:',
             `${description}`,
